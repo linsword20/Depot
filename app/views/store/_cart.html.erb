@@ -1,0 +1,29 @@
+
+<div class="cart-title"><%= I18n.t 'layout.cart.title'%></div>
+<table>
+  <!--局部模板调用-->
+  <%= render(:partial => "cart_item" , :collection => cart.items) %>
+  <tr class="total-line">
+    <td total-colspan="2">Total</td>
+    <td class="total-cell"><%= number_to_currency(@cart.total_price) %></td>
+  </tr>
+
+
+
+<!--
+<%= button_to 'Empty cart', :action => 'empty_cart' %>
+-->
+<table border="0">
+<tr>
+<td>
+<%= button_to I18n.t('layout.cart.button.checkout'),{:action => :checkout}, {:disabled => !@order.nil?} %>
+</td>
+<td>
+<% form_remote_tag :url => { :action => :empty_cart } do %>
+  <%= submit_tag I18n.t('layout.cart.button.empty'), :disabled => !@order.nil? %>
+<% end %>
+</td>
+</tr>
+</table>
+
+

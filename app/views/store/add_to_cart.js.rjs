@@ -1,0 +1,11 @@
+page.select("div#notice").each {|div| div.hide }     ################订单完成后，继续购物时，即再次使用add_to_cart时，隐藏flash （“Thank you for your order”）
+
+page.replace_html("cart", :partial => "cart", :object => @cart)######显示购物车
+
+
+page[:cart].visual_effect :blind_down if @cart.total_items == 1######以blind_down形式显示购物车的出现
+
+#####################################################################对新加入item以高亮显示
+page[ :current_item].visual_effect :highlight,     
+				  :startcolor => "#88ff88" ,
+				  :endcolor => "#114411"

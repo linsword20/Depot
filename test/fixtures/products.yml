@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  image_url: MyString
+
+two:
+  title: MyString
+  description: MyText
+  image_url: MyString
+
+ruby_book:
+  title: Programing Ruby
+  description: yyy
+  price: 1
+  image_url: ruby.jpg
+
+rails_book:
+  title: Agile Web Development with Rails
+  description: yyy
+  price: 1
+  image_url: rails.jpg

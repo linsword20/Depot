@@ -1,0 +1,24 @@
+<h1>Listing orders</h1>
+
+<table cellspacing="13">
+  <tr align="left">
+    <th>Name</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Pay type</th>
+  </tr>
+
+<% for order in @orders %>
+  <tr>
+    <td><%=h order.name %></td>
+    <td><%=h order.address %></td>
+    <td><%=h order.email %></td>
+    <td><%=h order.pay_type %>&nbsp;</td>
+    <td><%= link_to 'Show', order %></td>
+    <td><%= link_to 'Destroy', order, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

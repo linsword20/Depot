@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @order.name %><br />
+  
+  <b>Address:</b>
+  <%=h @order.address %><br />
+
+  <b>Email:</b>
+  <%=h @order.email %><br />
+
+  <b>Pay type:</b>
+  <%=h @order.pay_type %>
+</p>
+
+<p>
+  <%for line_item in @order.line_items %>
+  <%= Product.find(line_item.product_id).title %>&nbsp;&times;&nbsp;<%= line_item.quantity %><br />
+  <% end %> 
+</p>
+<p>
+  <b>Total price:</b>&nbsp;<%= number_to_currency(line_item.total_price) %>
+</p>
+<%= link_to 'Back', orders_path %>

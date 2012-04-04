@@ -1,0 +1,2 @@
+page[:cart].visual_effect :blind_up ###########清空购物车时，购物车以blind_up方式隐藏[点击empty => 发起ajax ，empty action => 清空sessions,因此购物车视图]
+
